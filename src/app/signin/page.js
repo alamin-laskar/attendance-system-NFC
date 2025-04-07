@@ -37,7 +37,7 @@ export default function SigninPage() {
       setSuccess('Signin successful! Redirecting...');
       setTimeout(() => {
         router.push('/dashboard');
-      }, 1000);
+      }, 200);
     }
   };
 

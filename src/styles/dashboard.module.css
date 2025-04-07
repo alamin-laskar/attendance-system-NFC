@@ -1,0 +1,221 @@
+.dashboardWrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #0f172a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f1f5f9;
+}
+
+.sidebar {
+  width: 270px;
+  background-color: #1e293b;
+  padding: 2rem 1.2rem;
+  border-radius: 0 2rem 2rem 0;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #e2e8f0;
+}
+
+.sidebar p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #cbd5e1;
+}
+
+.statusBox {
+  background-color: #334155;
+  border-radius: 1.2rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.statusBox h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: #f8fafc;
+}
+
+.statusBox p {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+.semesters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.semButton {
+  background-color: #1e293b;
+  border: 1px solid #64748b;
+  color: #e2e8f0;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.6rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.semButton:hover {
+  background-color: #475569;
+  border-color: #94a3b8;
+}
+
+.logout {
+  background-color: #ef4444;
+  color: #fff;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.logout:hover {
+  background-color: #dc2626;
+}
+
+.main {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.studentDetails {
+  background-color: #1e293b;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 700px;
+}
+
+.studentDetails h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #f1f5f9;
+}
+
+.detailItem {
+  margin-bottom: 0.9rem;
+  font-size: 1rem;
+  color: #e2e8f0;
+}
+
+.subjectList {
+  list-style: none;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.subjectList li {
+  margin-bottom: 0.4rem;
+  color: #cbd5e1;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.25rem;
+  color: #94a3b8;
+}
+
+
+.profileSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.editBtn {
+  background-color: #1f2937;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #1f2937;
+  padding: 20px;
+  border-radius: 16px;
+  width: 400px;
+  color: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.modal h3 {
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal input {
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background: #374151;
+  color: white;
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.modalButtons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modalButtons button[type="submit"] {
+  background: #10b981;
+  color: white;
+}
+
+.modalButtons button[type="button"] {
+  background: #ef4444;
+  color: white;
+}
