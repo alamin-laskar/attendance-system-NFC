@@ -5,7 +5,8 @@
       "@/styles":["./src/styles/"],
       "@/lib":["./src/lib/"],
       "@/models":["./src/models/"],
-      "@/api":["./src/app/api/"]
+      "@/api":["./src/app/api/"],
+      "@/app":["./src/app/"]
     }
   }
 }
