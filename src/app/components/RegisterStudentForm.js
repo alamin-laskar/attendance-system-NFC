@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import styles from '@/styles/register.module.css'; 
+import styles from '@/styles/registerStudentForm.module.css'; 
 
 export default function RegisterPage() {
     const initialFormState = {

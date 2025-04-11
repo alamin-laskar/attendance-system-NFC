@@ -38,7 +38,7 @@ export default function SignupPage() {
       setSuccess('Signup successful! Redirecting...');
       setTimeout(() => {
         router.push('/signin');
-      }, 500); // waits for 1 second
+      }, 100); // waits for 1 second
     }
   };
 

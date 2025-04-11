@@ -82,6 +82,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  margin-left: 100px;
 }
 
 .logout:hover {

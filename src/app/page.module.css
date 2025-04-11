@@ -1,58 +1,67 @@
 .container {
-    max-width: 600px;
-    margin: 5rem auto;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    padding: 2rem;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .heading {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 1rem;
-  }
-  
-  .text {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 2rem;
-  }
-  
-  .buttonGroup {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-  }
-  
-  .btn,
-  .btnOutline {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    transition: background 0.3s ease;
-  }
-  
-  .btn {
-    background-color: #0070f3;
-    color: white;
-  }
-  
-  .btn:hover {
-    background-color: #0059c1;
-  }
-  
-  .btnOutline {
-    background-color: transparent;
-    border: 2px solid #0070f3;
-    color: #0070f3;
-  }
-  
-  .btnOutline:hover {
-    background-color: #f0f8ff;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #004d40;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #00796b;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1rem;
+  color: #333;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  background-color: #00796b;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #004d40;
+}
+
+.btnOutline {
+  background-color: transparent;
+  color: #00796b;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: 2px solid #00796b;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnOutline:hover {
+  background-color: #00796b;
+  color: white;
+}

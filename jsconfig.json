@@ -6,7 +6,9 @@
       "@/lib":["./src/lib/"],
       "@/models":["./src/models/"],
       "@/api":["./src/app/api/"],
-      "@/app":["./src/app/"]
+      "@/app":["./src/app/"],
+      "@/components":["./src/app/components/"]
+
     }
   }
 }
