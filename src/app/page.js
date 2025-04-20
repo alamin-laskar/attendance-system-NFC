@@ -1,95 +1,143 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+// src/app/page.js
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from './page.module.css';
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const developers = [
+    {
+      name: "Developer 1",
+      role: "Frontend Developer",
+      image: "/dev1.jpg",
+      github: "https://github.com/dev1",
+      linkedin: "https://linkedin.com/in/dev1"
+    },
+    {
+      name: "Developer 2",
+      role: "Backend Developer",
+      image: "/dev2.jpg",
+      github: "https://github.com/dev2",
+      linkedin: "https://linkedin.com/in/dev2"
+    },
+    {
+      name: "Developer 3",
+      role: "UI/UX Designer",
+      image: "/dev3.jpg",
+      github: "https://github.com/dev3",
+      linkedin: "https://linkedin.com/in/dev3"
+    },
+    {
+      name: "Developer 4",
+      role: "Electronics",
+      image: "/dev3.jpg",
+      github: "https://github.com/dev3",
+      linkedin: "https://linkedin.com/in/dev3"
+    }
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+  ];
+
+  return (
+    <main className={styles.container}>
+      <nav className={styles.navbar}>
+        <div className={styles.navLogo}>
+          <h1>NFC Attendance</h1>
         </div>
-      </main>
+        <div className={styles.navLinks}>
+          <Link href="/signup" className={styles.navButton}>Sign Up</Link>
+          <Link href="/signin" className={styles.navButton}>Sign In</Link>
+          <Link href="/signin" className={`${styles.navButton} ${styles.adminBtn}`}>Admin</Link>
+        </div>
+      </nav>
+
+      <section className={styles.heroSection}>
+        <div className={styles.heroContent}>
+          <h1 className={styles.heroTitle}>Modern Attendance Tracking</h1>
+          <p className={styles.heroSubtitle}>
+            An NFC-based attendance system developed by the Department of ETE 
+            of Barak Valley Engineering College
+          </p>
+          <div className={styles.heroCta}>
+            <Link href="/learn-more" className={styles.primaryBtn}>Learn More</Link>
+            <Link href="/demo" className={styles.secondaryBtn}>See Demo</Link>
+          </div>
+        </div>
+        <div className={styles.heroImage}>
+          {/* You can add an illustration or image here */}
+          <div className={styles.imagePlaceholder}>
+            <div className={styles.circle}></div>
+            <div className={styles.card}></div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.infoSection}>
+        <div className={styles.infoCard}>
+          <div className={styles.infoIcon}>📱</div>
+          <h3>Tap & Go</h3>
+          <p>Simply tap your NFC card to mark attendance in seconds</p>
+        </div>
+        <div className={styles.infoCard}>
+          <div className={styles.infoIcon}>📊</div>
+          <h3>Real-time Data</h3>
+          <p>Track attendance patterns with instant updates</p>
+        </div>
+        <div className={styles.infoCard}>
+          <div className={styles.infoIcon}>🔒</div>
+          <h3>Secure</h3>
+          <p>Encrypted data storage with authentication</p>
+        </div>
+      </section>
+
+      <section className={styles.aboutSection}>
+        <h2>About the Project</h2>
+        <p>
+          This innovative system uses Near Field Communication (NFC) technology to streamline 
+          the attendance tracking process. Students simply tap their NFC-enabled ID cards 
+          on the reader to mark their attendance, eliminating the need for manual record-keeping 
+          and reducing administrative overhead.
+        </p>
+        <p>
+          The system provides real-time tracking, generates reports, and helps improve 
+          overall attendance management efficiency across departments.
+        </p>
+      </section>
+
+      <section className={styles.teamSection}>
+        <h2>Developer Team</h2>
+        <div className={styles.teamCards}>
+          {developers.map((dev, index) => (
+            <div key={index} className={styles.teamCard}>
+              <div className={styles.teamImageContainer}>
+                <Image 
+                  src={dev.image} 
+                  alt={dev.name} 
+                  width={100} 
+                  height={100} 
+                  className={styles.teamImage}
+                />
+              </div>
+              <h3>{dev.name}</h3>
+              <p className={styles.teamRole}>{dev.role}</p>
+              <div className={styles.teamSocial}>
+                <a href={dev.github} target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+                <a href={dev.linkedin} target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <p>© {new Date().getFullYear()} NFC Attendance System | Barak Valley Engineering College</p>
       </footer>
-    </div>
+    </main>
   );
 }
