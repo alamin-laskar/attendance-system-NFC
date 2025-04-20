@@ -32,7 +32,7 @@ export async function POST(request) {
     
     // Find the user by NFC ID
     const user = await User.findOne({ nfcId: uid });
-    
+  
     // If user not found, return the UID for registration purposes
     if (!user) {
       return NextResponse.json({ 
@@ -70,6 +70,7 @@ export async function POST(request) {
       semester,
       scanTime: new Date(),
       classSession: body.classSession || 'default',
+      role: user.role,
       metadata: {
         deviceId: request.headers.get('x-device-id') || 'unknown',
         verificationMethod: 'nfc'

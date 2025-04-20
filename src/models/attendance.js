@@ -39,6 +39,12 @@ const AttendanceSchema = new mongoose.Schema({
     type: String,
     required: true // e.g., "morning", "afternoon", or specific time slot
   },
+  role:{
+    type: String,
+    enum:['student', 'teacher', 'admin'],
+    default: 'student',
+    required: true
+  },
   metadata: {
     deviceId: String, // ID of the ESP device that recorded this
     location: String, // Optional: if you have multiple scanning locations
