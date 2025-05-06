@@ -1,0 +1,309 @@
+/* /src/app/teacher/dashboard/dashboard.module.css */
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.loadingState, .errorState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.errorState {
+  color: #e74c3c;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #2c3e50, #3498db);
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.headerLeft {
+  flex: 1;
+}
+
+.welcomeText {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+.mainContent {
+  margin-bottom: 2rem;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.infoCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.infoCard:hover {
+  transform: translateY(-5px);
+}
+
+.infoLabel {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.infoValue {
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.divider {
+  height: 1px;
+  background: #e1e1e1;
+  margin: 2rem 0;
+}
+
+.statusIndicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #2ecc71;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.detailsContainer {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.detailsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.detailsTitle {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.editProfileButton {
+  padding: 0.75rem 1.5rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.editProfileButton:hover {
+  background: #2980b9;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.detailCard {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.cardTitle {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.detailsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.detailRow:last-child {
+  border-bottom: none;
+}
+
+.detailLabel {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.detailValue {
+  color: #2c3e50;
+}
+
+.subjectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.subjectCard {
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.subjectName {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.subjectMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.subjectCode {
+  font-family: monospace;
+  padding: 0.2rem 0.4rem;
+  background: #e9ecef;
+  border-radius: 3px;
+}
+
+.noSubjects {
+  color: #6c757d;
+  text-align: center;
+  padding: 1rem;
+}
+
+.subjectList, .scheduleList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.subjectList li, .scheduleList li {
+  padding: 0.75rem;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 1rem;
+}
+
+.subjectList li:last-child, .scheduleList li:last-child {
+  border-bottom: none;
+}
+
+.subjectList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.subjectList li:last-child {
+  margin-bottom: 0;
+}
+
+.attendanceButtonContainer {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.attendanceButton {
+  background-color: #3182ce;
+  color: white;
+  font-weight: 600;
+  padding: 0.875rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(49, 130, 206, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.attendanceButton:hover {
+  background-color: #2b6cb0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(49, 130, 206, 0.3);
+}
+
+.attendanceButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(49, 130, 206, 0.2);
+}
+
+.attendanceButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.4);
+}
+
+.logoutButton {
+  background-color: #ef4444;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.logoutButton:hover {
+  background-color: #dc2626;
+}
+
+/* For responsive design */
+@media (max-width: 640px) {
+  .attendanceButton {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}

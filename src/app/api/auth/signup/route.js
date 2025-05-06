@@ -1,6 +1,5 @@
 // src/app/api/auth/signup/route.js
 import { NextResponse } from 'next/server';
-import bcrypt from 'bcryptjs';
 import dbConnect from '@/lib/mongodb';
 import User from '@/models/user';
 
@@ -40,15 +39,11 @@ export async function POST(request) {
       }
     }
     
-    // Hash password
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
-    
-    // Create user
+    // Create user (password will be hashed by User model pre-save hook)
     const user = await User.create({
       name,
       email,
-      password: hashedPassword,
+      password,
       role: role || 'student',
       studentId: role === 'student' ? studentId : undefined
     });

@@ -4,9 +4,16 @@ import { cookies } from 'next/headers';
 
 export async function POST() {
   try {
-    const cookieStore = await cookies(); // ✅ await is needed
+    const cookieStore = cookies();
 
-    cookieStore.set({
+    // Create response first
+    const response = NextResponse.json({
+      success: true,
+      message: 'Logged out successfully'
+    });
+
+    // Set cookie asynchronously
+    await response.cookies.set({
       name: 'token',
       value: '',
       httpOnly: true,
@@ -15,10 +22,7 @@ export async function POST() {
       sameSite: 'strict'
     });
 
-    return NextResponse.json({
-      success: true,
-      message: 'Logged out successfully'
-    });
+    return response;
 
   } catch (error) {
     console.error('Logout error:', error);

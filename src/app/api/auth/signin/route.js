@@ -5,7 +5,6 @@ import dbConnect from '@/lib/mongodb';
 import User from '@/models/user';
 import { signToken } from '@/utils/jwt';
 
-
 export async function POST(request) {
   try {
     await dbConnect();
@@ -29,8 +28,8 @@ export async function POST(request) {
       return NextResponse.json({ message: 'Invalid credentials' }, { status: 401 });
     }
     
-    // Create token
-    const token = signToken({
+    // Create token asynchronously
+    const token = await signToken({
       id: user._id,
       name: user.name,
       email: user.email,
@@ -51,8 +50,8 @@ export async function POST(request) {
       token
     });
     
-    // Set the cookie directly on the response
-    response.cookies.set({
+    // Set the cookie asynchronously
+    await response.cookies.set({
       name: 'token',
       value: token,
       httpOnly: true,

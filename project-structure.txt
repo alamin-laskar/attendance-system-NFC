@@ -1,0 +1,78 @@
+attendance-system/
+├── jsconfig.json
+├── next.config.mjs
+├── package.json
+├── project-structure.txt
+├── README.md
+├── public/
+│   └── bvec logo.jpg
+└── src/
+    ├── middleware.js
+    ├── app/
+    │   ├── globals.css
+    │   ├── layout.js
+    │   ├── page.js
+    │   ├── page.module.css
+    │   ├── admin/
+    │   │   ├── admin.module.css
+    │   │   ├── layout.js
+    │   │   ├── dashboard/
+    │   │   │   ├── dashboard.module.css
+    │   │   │   └── page.js
+    │   │   └── users/
+    │   │       └── create/
+    │   │           ├── create.module.css
+    │   │           └── page.js
+    │   ├── api/
+    │   │   ├── auth/
+    │   │   │   ├── admin/
+    │   │   │   │   ├── create-admin/
+    │   │   │   │   │   └── route.js
+    │   │   │   │   ├── create-student/
+    │   │   │   │   │   └── route.js
+    │   │   │   │   └── signin/
+    │   │   │   │       └── route.js
+    │   │   │   ├── logout/
+    │   │   │   │   └── route.js
+    │   │   │   ├── me/
+    │   │   │   │   └── route.js
+    │   │   │   ├── signin/
+    │   │   │   │   └── route.js
+    │   │   │   └── signup/
+    │   │   │       └── route.js
+    │   │   ├── connect-esp/
+    │   │   │   ├── route.js
+    │   │   │   └── test/
+    │   │   │       └── route.js
+    │   │   └── users/
+    │   │       └── check-nfc/
+    │   │           └── route.js
+    │   ├── signin/
+    │   │   ├── page.js
+    │   │   └── signin.module.css
+    │   ├── signup/
+    │   │   ├── page.js
+    │   │   └── signup.module.css
+    │   ├── student/
+    │   │   └── dashboard/
+    │   │       └── page.js
+    │   └── teacher/
+    │       └── dashboard/
+    │           ├── dashboard.module.css
+    │           └── page.js
+    ├── components/
+    │   ├── StudentRegistrationForm.js
+    │   ├── toast.js
+    │   └── styles/
+    │       ├── StudentRegistrationForm.module.css
+    │       └── toast.module.css
+    ├── context/
+    │   ├── authContext.js
+    │   └── toastContext.js
+    ├── lib/
+    │   └── mongodb.js
+    ├── models/
+    │   ├── attendance.js
+    │   └── user.js
+    └── utils/
+        └── jwt.js

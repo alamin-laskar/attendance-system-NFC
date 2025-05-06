@@ -4,7 +4,10 @@
 import { createContext, useContext, useState, useCallback } from 'react';
 import Toast from '@/components/toast';
 
-const ToastContext = createContext();
+const ToastContext = createContext({
+  showToast: () => {},
+  hideToast: () => {}
+});
 
 export function ToastProvider({ children }) {
   const [toasts, setToasts] = useState([]);

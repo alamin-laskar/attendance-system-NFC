@@ -9,8 +9,18 @@ const AttendanceSchema = new mongoose.Schema({
   },
   nfcId: {
     type: String,
-    required: true,
-    index: true // for faster queries
+    required: function() {
+      return this.metadata && this.metadata.verificationMethod === 'nfc';
+    },
+    index: true
+  },
+  sessionId: {
+    type: String,
+    index: true
+  },
+  teacherId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
   },
   subject: {
     type: String,
@@ -30,31 +40,35 @@ const AttendanceSchema = new mongoose.Schema({
     enum: ['present', 'late', 'absent'],
     default: 'present'
   },
-  scanTime: {
+  scanTime: { 
     type: Date,
     required: true
   },
-  // For handling any specific class timing rules
   classSession: {
     type: String,
-    required: true // e.g., "morning", "afternoon", or specific time slot
+    required: true
   },
-  role:{
+  role: {
     type: String,
-    enum:['student', 'teacher', 'admin'],
+    enum: ['student', 'teacher', 'admin'],
     default: 'student',
     required: true
   },
+  sessionEnded: {
+    type: Boolean,
+    default: false
+  },
   metadata: {
-    deviceId: String, // ID of the ESP device that recorded this
-    location: String, // Optional: if you have multiple scanning locations
+    deviceId: String,
+    location: String,
     verificationMethod: {
       type: String,
+      enum: ['nfc', 'qrcode', 'manual'],
       default: 'nfc'
     }
   }
 }, {
-  timestamps: true // Automatically add createdAt and updatedAt fields
+  timestamps: true
 });
 
 // Compound index for efficient querying by date and user

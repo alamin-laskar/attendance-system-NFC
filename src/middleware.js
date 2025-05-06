@@ -20,7 +20,7 @@ const roleBasedPaths = {
 // Public paths that should be accessible without authentication
 const publicPaths = ['/signin', '/signup', '/', '/api/auth/signin', '/api/auth/signup'];
 
-export function middleware(request) {
+export async function middleware(request) {
   const { pathname } = request.nextUrl;
 
   // Allow public paths
@@ -43,7 +43,7 @@ export function middleware(request) {
     }
     
     // Verify the token
-    const decoded = verifyToken(token);
+    const decoded = await verifyToken(token);
     
     if (!decoded) {
       const signInUrl = new URL('/signin', request.url);

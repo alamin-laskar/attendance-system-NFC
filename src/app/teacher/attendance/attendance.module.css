@@ -1,0 +1,152 @@
+/* /src/app/teacher/attendance/attendance.module.css */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  .backLink {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #edf2f7;
+    color: #4a5568;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .backLink:hover {
+    background-color: #e2e8f0;
+    color: #2d3748;
+  }
+  
+  .mainContent {
+    margin-top: 1.5rem;
+  }
+  
+  .loadingState,
+  .errorState {
+    text-align: center;
+    padding: 3rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .loadingState {
+    color: #4a5568;
+    font-size: 1.125rem;
+  }
+  
+  .errorState {
+    color: #e53e3e;
+    font-size: 1.125rem;
+  }
+
+.reportContainer {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reportTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.reportTable th,
+.reportTable td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.reportTable th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #555;
+}
+
+.reportTable tr:hover {
+  background-color: #f8f9fa;
+}
+
+.status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.present {
+  background-color: #e6f4ea;
+  color: #1e7e34;
+}
+
+.absent {
+  background-color: #fbe9e7;
+  color: #d32f2f;
+}
+
+.late {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.loader {
+  border: 3px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 3px solid #3498db;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.noData {
+  text-align: center;
+  color: #666;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

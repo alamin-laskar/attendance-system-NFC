@@ -27,6 +27,41 @@ const UserSchema = new mongoose.Schema({
     enum: ['student', 'teacher', 'admin'],
     default: 'student',
   },
+  subjects: {
+    type: [{
+      name: {
+        type: String,
+        required: true
+      },
+      code: {
+        type: String,
+        required: true
+      },
+      semester: {
+        type: String,
+        required: true
+      }
+    }],
+    validate: {
+      validator: function(v) {
+        return this.role !== 'teacher' || (Array.isArray(v) && v.length > 0);
+      },
+      message: 'Teachers must have at least one subject'
+    },
+    required: function() { return this.role === 'teacher'; }
+  },
+  department: {
+    type: String,
+    required: function() { return this.role === 'student' || this.role === 'teacher'; }
+  },
+  qualification: {
+    type: String,
+    required: function() { return this.role === 'teacher'; }
+  },
+  specialization: {
+    type: String,
+    required: function() { return this.role === 'teacher'; }
+  },
   studentId: {
     type: String,
     unique: true,
@@ -36,10 +71,6 @@ const UserSchema = new mongoose.Schema({
     type: String,
     unique: true,
     sparse: true,
-  },
-  department: {
-    type: String,
-    required: function() { return this.role === 'student'; }
   },
   semester: {
     type: String,

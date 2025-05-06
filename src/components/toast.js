@@ -42,7 +42,7 @@ function Toast({ message, type = 'success', duration = 3000, onClose }) {
           <line x1="12" y1="8" x2="12.01" y2="8"></line>
         </svg>
       )}
-      <div className={styles.message}>{message}</div>
+      <p className={styles.message}>{message}</p>
       <button onClick={handleClose} className={styles.closeButton} aria-label="Close toast">
         ×
       </button>
